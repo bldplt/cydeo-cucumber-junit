@@ -1,8 +1,7 @@
 package com.cydeo.runners;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import io.cucumber.junit.*;
+import org.junit.runner.*;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -10,12 +9,12 @@ import org.junit.runner.RunWith;
                 //"pretty",
                 "html:target/cucumber-report.html",
                 "rerun:target/rerun.txt",
-               // "me.jvt.cucumber.report.PrettyReports:target/cucumber",
+                "me.jvt.cucumber.report.PrettyReports:target/cucumber",
         },
         features = "src/test/resources/features",
         glue = "com/cydeo/step_definitions",
-        dryRun = false,
-        tags = "@first",
+        dryRun = true,
+        tags = "@librarian" ,
         publish = false
 
 )

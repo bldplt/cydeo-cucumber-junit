@@ -1,5 +1,7 @@
 package com.cydeo.pages;
 
+
+
 import com.cydeo.utilities.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
@@ -15,9 +17,6 @@ public class GoogleSearchPage {
     //We can start locating web elements using @FindBy annotation
     @FindBy(name = "q")
     public WebElement searchBox;
-
-    @FindBy(xpath = "//div[@id='result-stats']")
-    public WebElement searchNumber;
 
 //    public WebElement capitalElement(String capital){
 //        return Driver.getDriver().findElement(By.linkText(capital));

@@ -1,18 +1,15 @@
 package com.cydeo.step_definitions;
 
-import com.cydeo.utilities.*;
 import com.cydeo.pages.*;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import org.junit.Assert;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.*;
-
-import java.security.Key;
+import com.cydeo.utilities.*;
+import io.cucumber.java.en.*;
+import org.junit.*;
+import org.openqa.selenium.*;
 
 public class GoogleStepDefinitions {
 
-    GoogleSearchPage googleSearchPage ;
+    GoogleSearchPage googleSearchPage = new GoogleSearchPage();
+
     @When("user types apple and clicks enter")
     public void user_types_and_clicks_enter2() {
 
@@ -32,7 +29,7 @@ public class GoogleStepDefinitions {
     @Then("user sees {string} in the google title")
     public void user_sees_in_the_google_title(String string) {
 
-        String expectedTitle = string+" - Google'da Ara";
+        String expectedTitle = string+" - Google Search";
         String actualTitle = Driver.getDriver().getTitle();
 
         //Junit assertion accepts first arg as expected, second arg as actual
@@ -43,7 +40,7 @@ public class GoogleStepDefinitions {
     @Then("user sees apple in the google title")
     public void user_sees_apple_in_the_google_title() {
 
-        String expectedTitle = "apple - Google'da Ara";
+        String expectedTitle = "apple - Google Search";
         String actualTitle = Driver.getDriver().getTitle();
 
         //Junit assertion accepts first arg as expected, second arg as actual
@@ -55,7 +52,6 @@ public class GoogleStepDefinitions {
 
     @When("user is on Google search page")
     public void user_is_on_google_search_page() {
-  googleSearchPage = new GoogleSearchPage();
 
         Driver.getDriver().get("https://www.google.com");
 
@@ -77,6 +73,5 @@ public class GoogleStepDefinitions {
     public void userShouldSeeInTheResult(String expectedCapital) {
         String actualValue = googleSearchPage.getCapital();
         Assert.assertEquals(expectedCapital,actualValue);
-
     }
 }
